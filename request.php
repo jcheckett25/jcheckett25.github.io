@@ -1,7 +1,7 @@
 <?php
 function handle_mysqli_connection(){
 	$hostname = "localhost";
-	$db_username = "apidev";
+	$db_username = "id15492695_apidev";
 	$db_password = "Turner2020!!";
 	$db_name = "id15492695_api_data";
 
