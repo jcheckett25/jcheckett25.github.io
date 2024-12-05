@@ -1,0 +1,179 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LETZLRBHN6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-LETZLRBHN6');
+    </script>
+
+    <title>Blog - JohnnyApps</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+	<style> 
+		body { 
+			font-family: Arial, sans-serif; 
+			margin: 0; 
+			padding: 0; 
+		} 
+
+		header { 
+			background-color: #ffffff; 
+			color: #000000; 
+			text-align: center; 
+		} 
+
+		/* nav { 
+			background-color: #242424; 
+			padding: 10px; 
+		} 
+
+		nav a { 
+			color: #fff; 
+			text-decoration: none; 
+			padding: 10px; 
+			margin-right: 10px; 
+			display: inline-block; 
+		}  */
+
+		.container { 
+			display: flex; 
+			justify-content: space-between; 
+			max-width: 95%; 
+			margin: 0 auto; 
+			padding: 20px; 
+		} 
+
+		article p { 
+			text-align: justify; 
+		} 
+
+		main { 
+			flex: 2; 
+		} 
+
+		article { 
+			margin-bottom: 20px; 
+			padding: 10px 20px; 
+			border: 1px solid rgb(145, 145, 145); 
+			margin-right: 10px; 
+		} 
+
+		aside { 
+			flex: 1; 
+			background-color: #c9c9c9; 
+			padding: 10px; 
+		} 
+
+		/* footer { 
+			background-color: #242424; 
+			color: #fff; 
+			text-align: center; 
+			position: fixed; 
+			bottom: 0; 
+			width: 100%; 
+		}  */
+	</style> 
+	<title>Blogging Website Layout</title> 
+</head> 
+
+<body> 
+	<!-- Header -->
+    <header id="header">
+        <a class="logo" href="index.html">JohnnyApps</a>
+        <nav>
+            <a href="#menu">Menu</a>
+        </nav>
+    </header> 
+
+	<!-- Nav -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="elements.html">Elements</a></li> -->
+            <li><a href="blog.html">Generic</a></li>
+            <li><a href="knowledgebase.html">Knowledgebase</a></li>
+            <li><a href="generic.html">Generic</a></li>
+			<li><a href="blog.html">Generic</a></li>
+			<li><a href="contact.html">Generic</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Heading -->
+			<div id="heading" >
+				<h1>Blog</h1>
+			</div>
+
+	<div class="container"> 
+		<main> 
+			<article> 
+				<h2>Finally</h2> 
+				<p class="post-meta"> 
+					Published on December 4th, 2024 by Johnny
+				</p> 
+				<p> 
+					Whelp, I made it. I finally made time to get back to developing / tinkering.<br>
+                    What did I start with? Email server. That's right. I made my own email server with linux.
+                    Yes, I hear all the gasps in the background.  <br>
+                    Everything should be good to go: MX records, SPF, DMARC, and DKIM. I'm actually legit.<br>
+                    Now, eventually I would like to do my own hosting where I can run php and have 
+                    a "contact me" page, but we'll get there eventually. <br>
+                    I should document my journey along the way because maybe there's someone that will 
+                    encounter the same issues I did, but I'll be able to provide help along the way. Pretty neat.
+				</p> 
+			</article>
+		</main> 
+
+		<aside> 
+			<h2>Recent Posts</h2> 
+			<ul> 
+				<li><a href="#"></a></li>
+			</ul> 
+		</aside> 
+	</div> 
+
+	<footer id="footer">
+        <div class="inner">
+            <div class="content">
+                <section>
+                    <h3>Hello!</h3>
+                    <p>More stuff about me I guess.</p>
+                </section>
+                <section>
+                    <h4>Social Media</h4>
+                    <ul class="alt">
+                        <li><a href="#">Not Yet.</a></li>
+                        <li><a href="#">Not Yet.</a></li>
+                        <li><a href="#">Not Yet.</a></li>
+                        <li><a href="#">Not Yet.</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Yo Dees Links</h4>
+                    <ul class="plain">
+                        <li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                        <li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                        <li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+                        <li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
+                    </ul>
+                </section>
+            </div>
+            <div class="copyright">
+                &copy; JohnnyApps. </a>.
+            </div>
+        </div>
+    </footer>
+</body> 
+
+</html>
