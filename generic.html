@@ -96,7 +96,7 @@
 			<!-- Tic-Tac-Toe Game -->
 			<div class="content" style="margin-top: 2em;">
 				<header>
-					<h2>Tic Tac Toe</h2>
+					<h2>Tic Tac Toe (vs AI)</h2>
 				</header>
 				<div id="tic-tac-toe">
 					<div id="ttt-board"></div>
@@ -148,7 +148,7 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 
-	<!-- Tic-Tac-Toe Logic -->
+	<!-- Tic-Tac-Toe AI Script -->
 	<script>
 		let tttCells = [];
 		let tttCurrentPlayer = 'X';
@@ -175,17 +175,80 @@
 		function tttMakeMove(index) {
 			if (tttGameOver || tttCells[index].textContent !== '') return;
 			tttCells[index].textContent = tttCurrentPlayer;
+
 			if (tttCheckWinner(tttCurrentPlayer)) {
 				tttStatus.textContent = `Player ${tttCurrentPlayer} wins!`;
 				tttGameOver = true;
 				return;
 			}
+
 			if (tttCells.every(cell => cell.textContent !== '')) {
 				tttStatus.textContent = "It's a draw!";
 				tttGameOver = true;
 				return;
 			}
+
 			tttCurrentPlayer = tttCurrentPlayer === 'X' ? 'O' : 'X';
+			tttStatus.textContent = `Player ${tttCurrentPlayer}'s turn`;
+
+			if (tttCurrentPlayer === 'O') {
+				setTimeout(tttAIMove, 500);
+			}
+		}
+
+		function tttAIMove() {
+			if (tttGameOver) return;
+
+			// 1. Try to win
+			for (let i = 0; i < 9; i++) {
+				if (tttCells[i].textContent === '') {
+					tttCells[i].textContent = 'O';
+					if (tttCheckWinner('O')) {
+						tttStatus.textContent = "Player O wins!";
+						tttGameOver = true;
+						return;
+					}
+					tttCells[i].textContent = '';
+				}
+			}
+
+			// 2. Try to block player X
+			for (let i = 0; i < 9; i++) {
+				if (tttCells[i].textContent === '') {
+					tttCells[i].textContent = 'X';
+					if (tttCheckWinner('X')) {
+						tttCells[i].textContent = 'O';
+						tttCurrentPlayer = 'X';
+						tttStatus.textContent = `Player ${tttCurrentPlayer}'s turn`;
+						return;
+					}
+					tttCells[i].textContent = '';
+				}
+			}
+
+			// 3. Pick random empty cell
+			let empty = [];
+			for (let i = 0; i < 9; i++) {
+				if (tttCells[i].textContent === '') empty.push(i);
+			}
+			if (empty.length > 0) {
+				const choice = empty[Math.floor(Math.random() * empty.length)];
+				tttCells[choice].textContent = 'O';
+			}
+
+			if (tttCheckWinner('O')) {
+				tttStatus.textContent = "Player O wins!";
+				tttGameOver = true;
+				return;
+			}
+
+			if (tttCells.every(cell => cell.textContent !== '')) {
+				tttStatus.textContent = "It's a draw!";
+				tttGameOver = true;
+				return;
+			}
+
+			tttCurrentPlayer = 'X';
 			tttStatus.textContent = `Player ${tttCurrentPlayer}'s turn`;
 		}
 
