@@ -4,11 +4,9 @@
 	<title>Application Privacy - JohnnyApps</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 
-	<!-- Google tag (gtag.js) -->
+	<!-- Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LETZLRBHN6"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
@@ -17,7 +15,7 @@
 		gtag('config', 'G-LETZLRBHN6');
 	</script>
 
-	<!-- Tic-Tac-Toe Styles -->
+	<!-- Custom Game Styles -->
 	<style>
 		#ttt-board {
 			display: grid;
@@ -37,13 +35,8 @@
 			border-radius: 8px;
 			color: #fff;
 		}
-		#ttt-board .cell:hover {
-			background: #333;
-		}
-		#ttt-status {
-			margin-top: 15px;
-			font-size: 1.1rem;
-		}
+		#ttt-board .cell:hover { background: #333; }
+		#ttt-status { margin-top: 15px; font-size: 1.1rem; }
 		#tic-tac-toe button {
 			margin-top: 10px;
 			padding: 8px 16px;
@@ -53,225 +46,332 @@
 			border-radius: 5px;
 			cursor: pointer;
 		}
+		canvas#breakoutCanvas {
+			display: block;
+			margin: 30px auto;
+			background: #111;
+			border: 2px solid #444;
+		}
 	</style>
 </head>
 <body class="is-preload">
 
-	<!-- Header -->
-	<header id="header">
-		<a class="logo" href="index.html">JohnnyApps</a>
-		<nav>
-			<a href="#menu">Menu</a>
-		</nav>
-	</header>
+<!-- Header -->
+<header id="header">
+	<a class="logo" href="index.html">JohnnyApps</a>
+	<nav><a href="#menu">Menu</a></nav>
+</header>
 
-	<!-- Nav -->
-	<nav id="menu">
-		<ul class="links">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="knowledgebase.html">Knowledgebase</a></li>
-			<li><a href="generic.html">Generic</a></li>
-			<li><a href="contact.html">Contact Me!</a></li>
-			<li><a href="blog.html">Blog</a></li>
-		</ul>
-	</nav>
+<!-- Nav -->
+<nav id="menu">
+	<ul class="links">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="knowledgebase.html">Knowledgebase</a></li>
+		<li><a href="generic.html">Generic</a></li>
+		<li><a href="contact.html">Contact Me!</a></li>
+		<li><a href="blog.html">Blog</a></li>
+	</ul>
+</nav>
 
-	<!-- Heading -->
-	<div id="heading">
-	<h1>Something new?</h1>
+<!-- Main -->
+<div id="heading"><h1>Something new?</h1></div>
+<section id="main" class="wrapper">
+	<div class="inner">
+
+		<div class="content">
+			<header>Games</header>
+			<p>This is for educational purposes ONLY.</p>
+			<p>Maybe a game or two?</p>
+		</div>
+
+		<!-- Tic-Tac-Toe Game -->
+		<div class="content" style="margin-top: 2em;">
+			<header><h2>Tic Tac Toe (vs AI)</h2></header>
+			<div id="tic-tac-toe">
+				<div id="ttt-board"></div>
+				<div id="ttt-status">Player X's turn</div>
+				<button onclick="tttResetGame()">Restart Game</button>
+			</div>
+		</div>
+
+		<!-- Breakout Game -->
+		<div class="content" style="margin-top: 4em;">
+			<header><h2>Breakout Game</h2></header>
+			<canvas id="breakoutCanvas" width="480" height="320"></canvas>
+			<p style="text-align: center;">Use ⬅️ and ➡️ arrow keys to move the paddle.</p>
+		</div>
+
 	</div>
-	
-	
-	<!-- Main -->
-	<section id="main" class="wrapper">
-		<div class="inner">
+</section>
 
-			<!-- Existing Content -->
-			<div class="content">
-				<header>
-					<!-- <h2>INmap</h2> -->
-					Games
-				</header>
-				<p>This is for educational purposes ONLY.</p>
-				<p>Maybe a game ot two?</p>
-			</div>
-
-			<!-- Tic-Tac-Toe Game -->
-			<div class="content" style="margin-top: 2em;">
-				<header>
-					<h2>Tic Tac Toe (vs AI)</h2>
-				</header>
-				<div id="tic-tac-toe">
-					<div id="ttt-board"></div>
-					<div id="ttt-status">Player X's turn</div>
-					<button onclick="tttResetGame()">Restart Game</button>
-				</div>
-			</div>
-
+<!-- Footer -->
+<footer id="footer">
+	<div class="inner">
+		<div class="content">
+			<section><h3>Hello</h3><p>More stuff about my App.</p></section>
+			<section>
+				<h4>Social Media</h4>
+				<ul class="alt">
+					<li><a href="#">Not Yet.</a></li>
+					<li><a href="#">Not Yet.</a></li>
+					<li><a href="#">Not Yet.</a></li>
+					<li><a href="#">Not Yet.</a></li>
+				</ul>
+			</section>
+			<section>
+				<h4>Yo Dees Links</h4>
+				<ul class="plain">
+					<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+					<li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+					<li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+					<li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
+				</ul>
+			</section>
 		</div>
-	</section>
+		<div class="copyright">&copy; JohnnyApps.</div>
+	</div>
+</footer>
 
-	<!-- Footer -->
-	<footer id="footer">
-		<div class="inner">
-			<div class="content">
-				<section>
-					<h3>Hello</h3>
-					<p>More stuff about my App.</p>
-				</section>
-				<section>
-					<h4>Social Media</h4>
-					<ul class="alt">
-						<li><a href="#">Not Yet.</a></li>
-						<li><a href="#">Not Yet.</a></li>
-						<li><a href="#">Not Yet.</a></li>
-						<li><a href="#">Not Yet.</a></li>
-					</ul>
-				</section>
-				<section>
-					<h4>Yo Dees Links</h4>
-					<ul class="plain">
-						<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
-						<li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
-						<li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
-						<li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
-					</ul>
-				</section>
-			</div>
-			<div class="copyright">
-				&copy; JohnnyApps.
-			</div>
-		</div>
-	</footer>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+<!-- Tic-Tac-Toe Logic (same as your working version) -->
+<script>
+	let tttCells = [], tttCurrentPlayer = 'X', tttGameOver = false;
+	const tttBoard = document.getElementById('ttt-board');
+	const tttStatus = document.getElementById('ttt-status');
 
-	<!-- Tic-Tac-Toe AI Script -->
-	<script>
-		let tttCells = [];
-		let tttCurrentPlayer = 'X';
-		let tttGameOver = false;
-		const tttBoard = document.getElementById('ttt-board');
-		const tttStatus = document.getElementById('ttt-status');
+	function tttInitBoard() {
+		tttBoard.innerHTML = '';
+		tttCells = [];
+		tttGameOver = false;
+		tttCurrentPlayer = 'X';
+		tttStatus.textContent = "Player X's turn";
 
-		function tttInitBoard() {
-			tttBoard.innerHTML = '';
-			tttCells = [];
-			tttGameOver = false;
-			tttCurrentPlayer = 'X';
-			tttStatus.textContent = "Player X's turn";
+		for (let i = 0; i < 9; i++) {
+			const cell = document.createElement('div');
+			cell.classList.add('cell');
+			cell.addEventListener('click', () => tttMakeMove(i));
+			tttBoard.appendChild(cell);
+			tttCells.push(cell);
+		}
+	}
 
-			for (let i = 0; i < 9; i++) {
-				const cell = document.createElement('div');
-				cell.classList.add('cell');
-				cell.addEventListener('click', () => tttMakeMove(i));
-				tttBoard.appendChild(cell);
-				tttCells.push(cell);
-			}
+	function tttMakeMove(index) {
+		if (tttGameOver || tttCells[index].textContent !== '') return;
+		tttCells[index].textContent = tttCurrentPlayer;
+
+		if (tttCheckWinner(tttCurrentPlayer)) {
+			tttStatus.textContent = `Player ${tttCurrentPlayer} wins!`;
+			tttGameOver = true;
+			return;
+		}
+		if (tttCells.every(cell => cell.textContent !== '')) {
+			tttStatus.textContent = "It's a draw!";
+			tttGameOver = true;
+			return;
 		}
 
-		function tttMakeMove(index) {
-			if (tttGameOver || tttCells[index].textContent !== '') return;
-			tttCells[index].textContent = tttCurrentPlayer;
+		tttCurrentPlayer = tttCurrentPlayer === 'X' ? 'O' : 'X';
+		tttStatus.textContent = `Player ${tttCurrentPlayer}'s turn`;
+		if (tttCurrentPlayer === 'O') setTimeout(tttAIMove, 500);
+	}
 
-			if (tttCheckWinner(tttCurrentPlayer)) {
-				tttStatus.textContent = `Player ${tttCurrentPlayer} wins!`;
-				tttGameOver = true;
-				return;
-			}
-
-			if (tttCells.every(cell => cell.textContent !== '')) {
-				tttStatus.textContent = "It's a draw!";
-				tttGameOver = true;
-				return;
-			}
-
-			tttCurrentPlayer = tttCurrentPlayer === 'X' ? 'O' : 'X';
-			tttStatus.textContent = `Player ${tttCurrentPlayer}'s turn`;
-
-			if (tttCurrentPlayer === 'O') {
-				setTimeout(tttAIMove, 500);
+	function tttAIMove() {
+		if (tttGameOver) return;
+		for (let i = 0; i < 9; i++) {
+			if (tttCells[i].textContent === '') {
+				tttCells[i].textContent = 'O';
+				if (tttCheckWinner('O')) {
+					tttStatus.textContent = "Player O wins!";
+					tttGameOver = true;
+					return;
+				}
+				tttCells[i].textContent = '';
 			}
 		}
-
-		function tttAIMove() {
-			if (tttGameOver) return;
-
-			// 1. Try to win
-			for (let i = 0; i < 9; i++) {
-				if (tttCells[i].textContent === '') {
+		for (let i = 0; i < 9; i++) {
+			if (tttCells[i].textContent === '') {
+				tttCells[i].textContent = 'X';
+				if (tttCheckWinner('X')) {
 					tttCells[i].textContent = 'O';
-					if (tttCheckWinner('O')) {
-						tttStatus.textContent = "Player O wins!";
-						tttGameOver = true;
-						return;
+					tttCurrentPlayer = 'X';
+					tttStatus.textContent = `Player ${tttCurrentPlayer}'s turn`;
+					return;
+				}
+				tttCells[i].textContent = '';
+			}
+		}
+		let empty = [];
+		for (let i = 0; i < 9; i++) {
+			if (tttCells[i].textContent === '') empty.push(i);
+		}
+		if (empty.length > 0) {
+			const choice = empty[Math.floor(Math.random() * empty.length)];
+			tttCells[choice].textContent = 'O';
+		}
+		if (tttCheckWinner('O')) {
+			tttStatus.textContent = "Player O wins!";
+			tttGameOver = true;
+			return;
+		}
+		if (tttCells.every(cell => cell.textContent !== '')) {
+			tttStatus.textContent = "It's a draw!";
+			tttGameOver = true;
+			return;
+		}
+		tttCurrentPlayer = 'X';
+		tttStatus.textContent = `Player ${tttCurrentPlayer}'s turn`;
+	}
+
+	function tttCheckWinner(player) {
+		const combos = [
+			[0,1,2],[3,4,5],[6,7,8],
+			[0,3,6],[1,4,7],[2,5,8],
+			[0,4,8],[2,4,6]
+		];
+		return combos.some(combo => combo.every(i => tttCells[i].textContent === player));
+	}
+
+	function tttResetGame() {
+		tttInitBoard();
+	}
+
+	window.addEventListener('DOMContentLoaded', tttInitBoard);
+</script>
+
+<!-- Breakout Game Script -->
+<script>
+	const canvas = document.getElementById("breakoutCanvas");
+	const ctx = canvas.getContext("2d");
+
+	let x = canvas.width / 2;
+	let y = canvas.height - 30;
+	let dx = 2;
+	let dy = -2;
+	const ballRadius = 10;
+	const paddleHeight = 10;
+	const paddleWidth = 75;
+	let paddleX = (canvas.width - paddleWidth) / 2;
+	let rightPressed = false;
+	let leftPressed = false;
+	const brickRowCount = 3;
+	const brickColumnCount = 5;
+	const brickWidth = 75;
+	const brickHeight = 20;
+	const brickPadding = 10;
+	const brickOffsetTop = 30;
+	const brickOffsetLeft = 30;
+	let score = 0;
+
+	const bricks = [];
+	for (let c = 0; c < brickColumnCount; c++) {
+		bricks[c] = [];
+		for (let r = 0; r < brickRowCount; r++) {
+			bricks[c][r] = { x: 0, y: 0, status: 1 };
+		}
+	}
+
+	document.addEventListener("keydown", e => {
+		if (e.key === "Right" || e.key === "ArrowRight") rightPressed = true;
+		else if (e.key === "Left" || e.key === "ArrowLeft") leftPressed = true;
+	});
+	document.addEventListener("keyup", e => {
+		if (e.key === "Right" || e.key === "ArrowRight") rightPressed = false;
+		else if (e.key === "Left" || e.key === "ArrowLeft") leftPressed = false;
+	});
+
+	function collisionDetection() {
+		for (let c = 0; c < brickColumnCount; c++) {
+			for (let r = 0; r < brickRowCount; r++) {
+				const b = bricks[c][r];
+				if (b.status === 1) {
+					if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
+						dy = -dy;
+						b.status = 0;
+						score++;
+						if (score === brickRowCount * brickColumnCount) {
+							alert("YOU WIN! 🎉");
+							document.location.reload();
+						}
 					}
-					tttCells[i].textContent = '';
 				}
 			}
+		}
+	}
 
-			// 2. Try to block player X
-			for (let i = 0; i < 9; i++) {
-				if (tttCells[i].textContent === '') {
-					tttCells[i].textContent = 'X';
-					if (tttCheckWinner('X')) {
-						tttCells[i].textContent = 'O';
-						tttCurrentPlayer = 'X';
-						tttStatus.textContent = `Player ${tttCurrentPlayer}'s turn`;
-						return;
-					}
-					tttCells[i].textContent = '';
+	function drawBall() {
+		ctx.beginPath();
+		ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+		ctx.fillStyle = "#fff";
+		ctx.fill();
+		ctx.closePath();
+	}
+
+	function drawPaddle() {
+		ctx.beginPath();
+		ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+		ctx.fillStyle = "#fff";
+		ctx.fill();
+		ctx.closePath();
+	}
+
+	function drawBricks() {
+		for (let c = 0; c < brickColumnCount; c++) {
+			for (let r = 0; r < brickRowCount; r++) {
+				if (bricks[c][r].status === 1) {
+					const brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
+					const brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
+					bricks[c][r].x = brickX;
+					bricks[c][r].y = brickY;
+					ctx.beginPath();
+					ctx.rect(brickX, brickY, brickWidth, brickHeight);
+					ctx.fillStyle = "#00aced";
+					ctx.fill();
+					ctx.closePath();
 				}
 			}
+		}
+	}
 
-			// 3. Pick random empty cell
-			let empty = [];
-			for (let i = 0; i < 9; i++) {
-				if (tttCells[i].textContent === '') empty.push(i);
-			}
-			if (empty.length > 0) {
-				const choice = empty[Math.floor(Math.random() * empty.length)];
-				tttCells[choice].textContent = 'O';
-			}
+	function drawScore() {
+		ctx.font = "16px Arial";
+		ctx.fillStyle = "#fff";
+		ctx.fillText("Score: " + score, 8, 20);
+	}
 
-			if (tttCheckWinner('O')) {
-				tttStatus.textContent = "Player O wins!";
-				tttGameOver = true;
-				return;
-			}
+	function draw() {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		drawBricks();
+		drawBall();
+		drawPaddle();
+		drawScore();
+		collisionDetection();
 
-			if (tttCells.every(cell => cell.textContent !== '')) {
-				tttStatus.textContent = "It's a draw!";
-				tttGameOver = true;
-				return;
+		if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) dx = -dx;
+		if (y + dy < ballRadius) dy = -dy;
+		else if (y + dy > canvas.height - ballRadius) {
+			if (x > paddleX && x < paddleX + paddleWidth) dy = -dy;
+			else {
+				alert("GAME OVER 😢");
+				document.location.reload();
 			}
-
-			tttCurrentPlayer = 'X';
-			tttStatus.textContent = `Player ${tttCurrentPlayer}'s turn`;
 		}
 
-		function tttCheckWinner(player) {
-			const combos = [
-				[0,1,2], [3,4,5], [6,7,8],
-				[0,3,6], [1,4,7], [2,5,8],
-				[0,4,8], [2,4,6]
-			];
-			return combos.some(combo =>
-				combo.every(i => tttCells[i].textContent === player)
-			);
-		}
+		if (rightPressed && paddleX < canvas.width - paddleWidth) paddleX += 5;
+		else if (leftPressed && paddleX > 0) paddleX -= 5;
 
-		function tttResetGame() {
-			tttInitBoard();
-		}
+		x += dx;
+		y += dy;
+		requestAnimationFrame(draw);
+	}
 
-		window.addEventListener('DOMContentLoaded', tttInitBoard);
-	</script>
+	draw();
+</script>
 
 </body>
 </html>
