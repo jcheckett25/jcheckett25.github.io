@@ -2,63 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Runaway Button</title>
+  <title>Runaway Button with Anime.js</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <style>
     body {
-      height: 100vh;
       margin: 0;
+      height: 100vh;
       overflow: hidden;
-      background-color: #111;
+      background-color: #222;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    button {
+    #runaway-btn {
       position: absolute;
       padding: 15px 30px;
       font-size: 18px;
-      cursor: pointer;
-      background-color: #28a745;
+      background-color: #007bff;
       color: white;
       border: none;
-      border-radius: 10px;
-      transition: top 0.2s, left 0.2s;
+      border-radius: 8px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <button id="runawayBtn">Click me!</button>
+  <button id="runaway-btn">Can't Catch Me!</button>
 
   <script>
-    const btn = document.getElementById('runawayBtn');
-    const offset = 100;
+    const button = document.getElementById("runaway-btn");
 
-    document.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const dx = e.clientX - (rect.left + rect.width / 2);
-      const dy = e.clientY - (rect.top + rect.height / 2);
-      const distance = Math.sqrt(dx * dx + dy * dy);
+    const animateMove = (element, prop, pixels) =>
+      anime({
+        targets: element,
+        [prop]: `${pixels}px`,
+        easing: "easeOutCirc",
+        duration: 500
+      });
 
-      if (distance < offset) {
-        // Move button away from mouse
-        const angle = Math.atan2(dy, dx);
-        const moveX = -Math.cos(angle) * offset;
-        const moveY = -Math.sin(angle) * offset;
+    ["mouseover", "click"].forEach(function (el) {
+      button.addEventListener(el, function () {
+        const top = getRandomNumber(window.innerHeight - this.offsetHeight);
+        const left = getRandomNumber(window.innerWidth - this.offsetWidth);
 
-        const newX = Math.min(window.innerWidth - rect.width, Math.max(0, rect.left + moveX));
-        const newY = Math.min(window.innerHeight - rect.height, Math.max(0, rect.top + moveY));
-
-        btn.style.left = newX + 'px';
-        btn.style.top = newY + 'px';
-      }
+        animateMove(this, "left", left).play();
+        animateMove(this, "top", top).play();
+      });
     });
 
-    // Initial button position
-    btn.style.left = '50%';
-    btn.style.top = '50%';
-    btn.style.transform = 'translate(-50%, -50%)';
+    const getRandomNumber = (num) => {
+      return Math.floor(Math.random() * (num + 1));
+    };
   </script>
 
 </body>
