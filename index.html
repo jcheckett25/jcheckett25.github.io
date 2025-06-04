@@ -17,36 +17,7 @@
 
   gtag('config', 'G-LETZLRBHN6');
 </script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
- 
 
-  <button id="runaway-btn">Can't Catch Me!</button>
-
-  <script>
-    const button = document.getElementById("runaway-btn");
-
-    const animateMove = (element, prop, pixels) =>
-      anime({
-        targets: element,
-        [prop]: `${pixels}px`,
-        easing: "easeOutCirc",
-        duration: 500
-      });
-
-    ["mouseover", "click"].forEach(function (el) {
-      button.addEventListener(el, function () {
-        const top = getRandomNumber(window.innerHeight - this.offsetHeight);
-        const left = getRandomNumber(window.innerWidth - this.offsetWidth);
-
-        animateMove(this, "left", left).play();
-        animateMove(this, "top", top).play();
-      });
-    });
-
-    const getRandomNumber = (num) => {
-      return Math.floor(Math.random() * (num + 1));
-    };
-  </script>
 	<!--BUTTON-->
 		<title>JohnnyApps</title>
 		<meta charset="utf-8" />
